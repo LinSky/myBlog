@@ -40,10 +40,14 @@ module.exports = {
       }
     ],
     loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
+        {
+          test: /\.vue$/,
+          loader: 'vue'
+        },
+        {
+          test: /\.less$/,
+          loader: 'style!csss!less'
+        },
       {
         test: /\.js$/,
         loader: 'babel',
