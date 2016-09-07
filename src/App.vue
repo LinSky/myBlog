@@ -1,29 +1,27 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <p>
-      Welcome to your Vue.js app!
-    </p>
-    <p style="color:red">
-      It seems you are using an outdated version of vue-cli.<br>
-      Upgrade to vue-cli@2.x to get access to newer versions of this template.
-    </p>
+    <author></author>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Author from './components/Author'
 
 export default {
   components: {
-    Hello
+    Author
   }
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+    *{
+        margin: 0; padding: 0; border: 0; font-family: "Hiragino Sans GB","Microsoft YaHei",tahoma,arial,simsun; font-size: 12px;
+    }
     html{
         height: 100%;
+    }
+    body{
+        height: 100%; background: url("./assets/bg.jpg"); 
     }
 </style>
