@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
     <author></author>
-  </div>
+    <router-view ></router-view>
+
 </template>
 
 <script>
@@ -22,6 +22,6 @@ export default {
         height: 100%;
     }
     body{
-        height: 100%; background: url("./assets/bg.jpg"); 
+        height: 100%; background: url("./assets/bg.jpg");
     }
 </style>

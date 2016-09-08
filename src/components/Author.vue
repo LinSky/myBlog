@@ -1,7 +1,7 @@
 <template>
   <div class="common_top">
       <div class="avatar">
-          <img class="logo" v-bind:src="avatar_img">
+          <img class="logo" v-link="'/detail'" v-bind:src="avatar_img">
       </div>
       <div class="name">
           <h1>{{name}}</h1>
@@ -34,7 +34,7 @@ export default {
             text-align: center; padding-top: 20px;
         }
         h1{
-            display: inline-block; margin: auto; background-color: rgba(255, 255, 255, .5); line-height: 48px; border-radius: 24px; padding: 0 20px; font-size: 24px; color: #FFF; text-shadow: 0 1px 1px #999;
+            display: inline-block; margin: auto; background-color: rgba(255, 255, 255, .5); line-height: 64px; border-radius: 32px; padding: 0 20px; font-size: 24px; color: #FFF; text-shadow: 0 1px 1px #999;
         }
     }
 </style>
