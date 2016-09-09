@@ -27,7 +27,7 @@ export default {
         }
     }
     h2{
-        padding: 0 20px; line-height: 48px; color: #333; font-size: 16px;
+        padding: 0 20px; line-height: 48px; color: #333; font-size: 24px;
     }
 }
 </style>

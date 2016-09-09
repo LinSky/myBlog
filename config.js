@@ -10,7 +10,7 @@ module.exports = {
     productionSourceMap: true
   },
   dev: {
-    port: 9527,
+    port: 80,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {}

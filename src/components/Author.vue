@@ -23,7 +23,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
     .common_top{
-        padding: 20px 0;
+        padding: 40px 0;
         .avatar{
             width: 100px; height: 100px;border-radius: 50%; margin: auto; background-color: rgba(255, 255, 255, .5);overflow: hidden; box-shadow: 0 0 3px #999;
             img{

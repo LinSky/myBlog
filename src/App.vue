@@ -1,7 +1,8 @@
 <template>
-    <author></author>
-    <router-view ></router-view>
-
+    <div class="">
+        <author></author>
+        <router-view ></router-view>
+    </div>
 </template>
 
 <script>
@@ -22,6 +23,6 @@ export default {
         height: 100%;
     }
     body{
-        height: 100%; background: url("./assets/bg.jpg");
+        height: 100%; background-image: url("./assets/bg.jpg"); background-attachment: fixed;
     }
 </style>
