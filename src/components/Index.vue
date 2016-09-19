@@ -7,6 +7,7 @@
 
 <script>
 import Articleinfo from 'components/Articleinfo.vue'
+import API from '../../api.config.js'
 
 export default {
   components: {
@@ -22,7 +23,7 @@ export default {
   },
   methods: {
     getArticles: function () {
-      this.$http.get('http://127.0.0.1:3000/articles')
+      this.$http.get(API.HOST + 'articles')
         .then((response) => {
           this.$set('articles', response.data)
         })
