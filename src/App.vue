@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div>
         <author></author>
         <router-view ></router-view>
     </div>

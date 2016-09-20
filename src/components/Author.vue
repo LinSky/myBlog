@@ -1,7 +1,7 @@
 <template>
   <div class="common_top">
       <div class="avatar">
-          <img class="logo" v-link="'/detail'" v-bind:src="avatar_img">
+          <img class="logo" v-link="'/'" v-bind:src="avatar_img">
       </div>
       <div class="name">
           <h1>{{name}}</h1>

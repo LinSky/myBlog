@@ -15,7 +15,7 @@ module.exports = merge(baseWebpackConfig, {
     chunkFilename: path.join(config.build.assetsSubDirectory, '[id].[chunkhash].js')
   },
   vue: {
-    loaders: cssLoaders({
+    loaders: cssLoaders.cssLoaders({
       sourceMap: config.build.productionSourceMap,
       extract: true
     })

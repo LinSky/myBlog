@@ -1,6 +1,6 @@
 <template>
   <div class="item" v-for="item in items">
-      <div class="thumbnail">
+      <div class="thumbnail" v-link="{name: 'detail', params:{articleId:item._id}}">
           <img v-bind:src="item.thumb" alt="" />
       </div>
       <h2>{{item.title}}</h2>

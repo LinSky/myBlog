@@ -14,7 +14,8 @@ router.map({
   '/index': {
     component: Index
   },
-  '/detail': {
+  '/detail/:articleId': {
+    name: 'detail',
     component: Detail
   }
 })
