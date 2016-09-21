@@ -1,5 +1,6 @@
 <template>
     <div class="acticles_list">
+        <a class="write" href="#!/create">写文章</a>
         <articleinfo :items="articles"></articleinfo>
     </div>
 
@@ -35,6 +36,9 @@ export default {
 <style lang="less" scoped>
 .acticles_list{
     width: 600px; padding: 40px 0 40px 40px; margin: auto; border-left: rgba(255, 255, 255, .2) solid 4px;
+}
+a.write{
+    position: absolute; top: 0;
 }
 
 </style>
