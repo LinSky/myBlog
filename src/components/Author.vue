@@ -1,10 +1,10 @@
 <template>
   <div class="common_top">
       <div class="avatar">
-          <img class="logo" v-link="'/'" v-bind:src="avatar_img">
+          <img class="logo" v-link="'/'" src="../assets/avatar.jpg">
       </div>
       <div class="name">
-          <h1>{{name}}</h1>
+          {{name}}
       </div>
   </div>
 </template>
@@ -13,8 +13,7 @@
 export default {
   data () {
     return {
-      name: 'Trouble Maker',
-      avatar_img: 'http://imglf0.ph.126.net/qbYA5OtC5u6MldoK8_AS6A==/4911738343701381591.jpg'
+      name: 'Trouble - 叁木'
     }
   }
 }
@@ -23,18 +22,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
     .common_top{
-        padding: 40px 0;
+        height: 280px; padding: 100px 0 20px; background: url("../assets/bg.jpg") no-repeat center -150px; background-size: 100%;
         .avatar{
-            width: 100px; height: 100px;border-radius: 50%; margin: auto; background-color: rgba(255, 255, 255, .5);overflow: hidden; box-shadow: 0 0 3px #999;
+            width: 96px; height: 96px; margin:auto; border-radius: 50%; background-color: rgba(255, 255, 255, .5);overflow: hidden; border: rgba(255, 255, 255, .2) solid 3px;
             img{
                 width: 100%;
             }
         }
         .name{
-            text-align: center; padding-top: 20px;
-        }
-        h1{
-            display: inline-block; margin: auto; background-color: rgba(255, 255, 255, .5); line-height: 64px; border-radius: 32px; padding: 0 20px; font-size: 24px; color: #FFF; text-shadow: 0 1px 1px #999;
+            text-align: center; padding-top: 20px; font-size: 18px; color: #FFF;
         }
     }
 </style>

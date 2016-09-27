@@ -48,13 +48,13 @@ export default {
 </script>
 <style>
 @import "../style/simditor.css";
-input{
+.textarea_box input{
     width: 1000px; height: 48px; line-height: 48px; margin-bottom: 20px; font-size: 16px; outline: none;
 }
 .textarea_box{
     width: 1000px; margin: auto;
 }
-a{
+.textarea_box a{
     width: 100px; height: 48px; line-height: 48px; text-align: center; margin: auto; display: block; background-color: #FFF; margin-top: 20px; font-size: 16px; color: #333; text-decoration: none;
 }
 .tip{

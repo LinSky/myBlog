@@ -1,41 +1,30 @@
 <template>
-  <div class="item" v-for="item in items">
-      <div class="thumbnail" v-link="{name: 'detail', params:{articleId:item._id}}">
-          <img v-bind:src="item.thumb" alt="" />
-      </div>
-      <h2>{{item.title}}</h2>
-      <div class="time">{{new Date(item.createTime).getFullYear() +'-'+ (new Date(item.createTime).getMonth()+1) + '-' + new Date(item.createTime).getDate() + ' ' + new Date(item.createTime).getHours()+':'+new Date(item.createTime).getMinutes() + ':' + new Date(item.createTime).getSeconds()}}</div>
-      <em></em>
+  <div class="article_item" v-for="item in items">
+      <p class="date">{{item.author}} 写于 {{new Date(item.createTime).getFullYear() +'-'+ (new Date(item.createTime).getMonth()+1) + '-' + new Date(item.createTime).getDate() + ' ' + new Date(item.createTime).getHours()+':'+new Date(item.createTime).getMinutes() + ':' + new Date(item.createTime).getSeconds()}}</p>
+      <h2 v-link="{name: 'detail', params:{articleId:item._id}}">{{item.title}}</h2>
+      <p class="numbers">阅读 {{item.view}} · 喜欢 {{item.like}} · 评论 {{item.commentNum}}</p>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {search: ''}
-  },
+  data () {},
   props: ['items']
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-.item{
-    background-color: #FFF; margin-bottom: 40px; box-shadow: 0 0 5px #888; position: relative;
-    .thumbnail{
-        height: 300px; overflow: hidden;
-        img{
-            width: 100%;
-        }
+.article_item{
+    border-bottom:#ccc dashed 1px; padding: 20px 0;
+    .date{
+        font-size: 12px; color: 12px; line-height: 24px; color: #999;
     }
     h2{
-        padding: 0 20px; line-height: 48px; color: #333; font-size: 24px;
+        line-height: 48px; color: #666; font-size: 18px; cursor: pointer; font-weight: bold;
     }
-    .time{
-        position: absolute; top: 0; left: -240px; font-size: 16px; color: #FFF; line-height: 24px; text-shadow:  0 0 2px #999;
-    }
-    em{
-        position: absolute; top: 0; left: -51px; background-color: #FFF; border-radius: 50%; width: 20px; height: 20px; box-shadow:  0 0 2px #999;
+    .numbers{
+        font-size: 12px; color: 12px; line-height: 24px; color: #999;
     }
 }
 </style>

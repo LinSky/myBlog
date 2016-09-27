@@ -1,28 +1,18 @@
 <template>
     <div>
-        <author></author>
         <router-view ></router-view>
     </div>
 </template>
 
 <script>
-import Author from './components/Author'
-
-export default {
-  components: {
-    Author
-  }
-}
+export default {}
 </script>
 
 <style lang="less">
     *{
-        margin: 0; padding: 0; border: 0; font-family: "Hiragino Sans GB","Microsoft YaHei",tahoma,arial,simsun; font-size: 12px;
+        margin: 0; padding: 0; border: 0; font: 14px/1.5 Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
     }
-    html{
-        height: 100%;
-    }
-    body{
-        height: 100%; background-image: url("./assets/bg.jpg"); background-attachment: fixed;
+    a{
+        text-decoration: none; color: #666;
     }
 </style>

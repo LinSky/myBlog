@@ -3,6 +3,7 @@ import App from './App'
 import Index from './components/Index'
 import Detail from './components/Detail'
 import Create from './components/Create'
+import Login from './components/Login'
 import VueRouter from 'vue-router'
 import vueResource from 'vue-resource'
 
@@ -17,6 +18,9 @@ router.map({
   },
   '/create': {
     component: Create
+  },
+  '/login': {
+    component: Login
   },
   '/detail/:articleId': {
     name: 'detail',
