@@ -15,4 +15,7 @@ export default {}
     a{
         text-decoration: none; color: #666;
     }
+    .wrap{
+        display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
 </style>

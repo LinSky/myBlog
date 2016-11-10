@@ -3,7 +3,6 @@ var config = require('../config')
 var cssLoaders = require('./css-loaders')
 var projectRoot = path.resolve(__dirname, '../')
 
-
 module.exports = {
   entry: {
     app: './src/main.js'
