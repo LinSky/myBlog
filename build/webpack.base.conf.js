@@ -13,12 +13,13 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
+    extensions: ['', '.js', '.vue', '.jsx'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'components': path.resolve(__dirname, '../src/components'),
+      'vue': 'vue/dist/vue.js'
     }
   },
   resolveLoader: {
@@ -69,19 +70,14 @@ module.exports = {
           limit: 10000,
           name: cssLoaders.assetsPath('img/[name].[hash:7].[ext]')
         }
-      }//,
-    //   {
-    //     test: /\.(png|jpg|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
-    //     loader: 'url',
-    //     query: {
-    //       limit: 1,
-    //       name: path.join(config.build.assetsSubDirectory, '[name].[hash:7].[ext]')
-    //     }
-    //   }
+      },
     ]
   },
   vue: {
-    loaders: cssLoaders.cssLoaders()
+    loaders: cssLoaders.cssLoaders(),
+    postcss: [
+
+    ]
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')

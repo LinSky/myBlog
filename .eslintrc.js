@@ -10,6 +10,7 @@ module.exports = {
   'rules': {
     //'indent': [1, 4, { "SwitchCase": 1 }],
     // allow paren-less arrow functions
+    'indent': 0,
     'arrow-parens': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0

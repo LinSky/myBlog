@@ -1,35 +1,11 @@
 import Vue from 'vue'
-import App from './App'
-import Index from './components/Index'
-import Detail from './components/Detail'
-import Create from './components/Create'
-import Login from './components/Login'
 import VueRouter from 'vue-router'
-import vueResource from 'vue-resource'
+
+import routes from './config/routes'
 
 Vue.use(VueRouter)
-Vue.use(vueResource)
 
-const router = new VueRouter()
-
-router.map({
-  '/index': {
-    component: Index
-  },
-  '/create': {
-    component: Create
-  },
-  '/login': {
-    component: Login
-  },
-  '/detail/:articleId': {
-    name: 'detail',
-    component: Detail
-  }
+const router = new VueRouter({
+    routes
 })
-
-router.redirect({
-  '*': '/index'
-})
-
-router.start(App, '#app')
+new Vue({ router }).$mount('#app')
