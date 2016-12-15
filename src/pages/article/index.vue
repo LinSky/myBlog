@@ -1,5 +1,7 @@
 <template>
-  <v-articlelist></v-articlelist>
+  <div>
+    文章详情{{ $route.params.id }}
+  </div>
 </template>
 
 <script>

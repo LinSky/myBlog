@@ -15,6 +15,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.vue', '.jsx'],
     fallback: [path.join(__dirname, '../node_modules')],
+    modulesDirectories: ['node_modules'],
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
@@ -41,14 +42,18 @@ module.exports = {
       }
     ],
     loaders: [
-        {
-          test: /\.vue$/,
-          loader: 'vue'
-        },
-        {
-          test: /\.less$/,
-          loader: 'style!csss!less'
-        },
+      {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+      {
+        test: /\.less$/,
+        loader: 'style!css!less'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
       {
         test: /\.js$/,
         loader: 'babel',
@@ -64,6 +69,10 @@ module.exports = {
         loader: 'vue-html'
       },
       {
+       test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+       loader: 'file-loader'
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
         query: {
@@ -74,10 +83,7 @@ module.exports = {
     ]
   },
   vue: {
-    loaders: cssLoaders.cssLoaders(),
-    postcss: [
-
-    ]
+    loaders: cssLoaders.cssLoaders()
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
