@@ -49,7 +49,7 @@ export default {
       console.log(this.editor.sync())
       this.content = this.editor.sync()
       if (this.content.length > 0 && this.title.length > 0) {
-        this.$http.post(API.HOST + 'articles', {title: this.title, content: this.content})
+        this.$http.post(API.HOST + 'articles', {title: this.title, content: this.content, author: this.user.username, authorId: this.user.id})
           .then((response) => {
           })
       } else {

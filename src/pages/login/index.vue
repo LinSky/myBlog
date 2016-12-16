@@ -19,8 +19,8 @@ export default {
   data () {
     return {
       user: {
-        phone: '',
-        password: ''
+        phone: null,
+        password: null
       }
     }
   },
@@ -33,9 +33,9 @@ export default {
   methods: {
     ...mapActions([USER_SIGNIN]),
     login: function () {
-      if (this.user.phone.length === 0) {
+      if (!this.user.phone) {
         this.$message.error('请输入手机！')
-      } else if (this.user.password.length === 0) {
+      } else if (!this.user.password) {
         this.$message.error('请输入密码！')
       } else {
         this.$http.post(API.HOST + 'login', this.user)
