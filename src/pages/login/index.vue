@@ -2,7 +2,7 @@
   <div class="login_content">
     <el-row>
       <el-col :span="12" :offset="6">
-        <el-input type="text" v-model="user.username" class="el_input" placeholder="请输入用户名"></el-input>
+        <el-input type="text" v-model="user.phone" class="el_input" placeholder="请输入手机"></el-input>
         <el-input type="password" v-model="user.password" placeholder="请输入密码"></el-input>
         <el-button type="primary" @click="login" class="login_btn">登录</el-button>
       </el-col>
@@ -19,7 +19,7 @@ export default {
   data () {
     return {
       user: {
-        username: '',
+        phone: '',
         password: ''
       }
     }
@@ -33,15 +33,19 @@ export default {
   methods: {
     ...mapActions([USER_SIGNIN]),
     login: function () {
-      if (this.user.username.length === 0) {
-        this.$message.error('请输入用户名！')
+      if (this.user.phone.length === 0) {
+        this.$message.error('请输入手机！')
       } else if (this.user.password.length === 0) {
         this.$message.error('请输入密码！')
       } else {
         this.$http.post(API.HOST + 'login', this.user)
           .then((response) => {
-            this.USER_SIGNIN(response.data.user)
-            this.$router.push('/write')
+            if (response.data.code === 0) {
+              this.USER_SIGNIN(response.data.user)
+              this.$router.push('/write')
+            } else {
+              this.$message.error(response.data.msg)
+            }
           })
       }
     }

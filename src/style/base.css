@@ -132,3 +132,6 @@ a:focus,*:focus {
 .fr {
     float:right;
 }
+.wrap{
+    text-overflow:ellipsis; white-space:nowrap; overflow:hidden;
+}

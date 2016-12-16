@@ -20,11 +20,6 @@ export default {
           name: 'home'
         },
         {
-          ch: '相册',
-          en: 'album',
-          name: 'home'
-        },
-        {
           ch: '写文章',
           en: 'write',
           name: 'write'

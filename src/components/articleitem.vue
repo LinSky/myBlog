@@ -2,7 +2,7 @@
   <div class="">
     <div class="article_item">
         <p class="date">{{article.author}} 写于 {{format(article.createTime)}}</p>
-        <router-link :to="{name: 'article', params: {id: article._id}}"> <h2>{{article.title}}{{article._id}}</h2> </router-link>
+        <router-link :to="{name: 'article', params: {id: article._id}}"> <h2>{{article.title}}</h2> </router-link>
         <p class="numbers">阅读 123 · 喜欢 64 · 评论 8</p>
     </div>
   </div>

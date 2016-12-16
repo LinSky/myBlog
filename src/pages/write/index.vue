@@ -4,14 +4,15 @@
       <el-input placeholder="请输入标题" size="large" v-model="title"></el-input>
     </div>
     <div class="textarea_con">
-      <textarea id="editor" placeholder="这儿输入···" autofocus></textarea>
+      <textarea id="editor" v-model="content" placeholder="这儿输入···" autofocus></textarea>
     </div>
-    <el-button type="primary" size="large" class="send_btn">保存</el-button>
+    <el-button @click="save" type="primary" size="large" class="send_btn">保存</el-button>
   </div>
 </template>
 
 <script>
 import $ from 'jquery'
+import API from '../../../api.config.js'
 import Simditor from 'simditor'
 import { mapState } from 'vuex'
 
@@ -43,6 +44,17 @@ export default {
         toolbar: toolbar
       })
       this.editor = editor
+    },
+    save: function () {
+      console.log(this.editor.sync())
+      this.content = this.editor.sync()
+      if (this.content.length > 0 && this.title.length > 0) {
+        this.$http.post(API.HOST + 'articles', {title: this.title, content: this.content})
+          .then((response) => {
+          })
+      } else {
+        this.$message.error('标题,内容不能为空！')
+      }
     }
   }
 }
