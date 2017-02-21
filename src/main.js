@@ -9,6 +9,7 @@ import store from './store'
 import elementUi from 'element-ui'
 
 import 'element-ui/lib/theme-default/index.css'
+import './style/font-awesome/less/font-awesome.less'
 
 import './style/base.css'
 

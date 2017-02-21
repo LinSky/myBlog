@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h1 class="wrap">{{title}}</h1>
-    <p class="numbers">阅读 123 · 喜欢 64 · 评论 8</p>
-    <div class="content" v-html="content">
-
+    <h1 class="wrap">{{article.title}}</h1>
+    <p class="numbers">阅读 {{article.view}} · 喜欢 {{article.like}}</p>
+    <div class="content" v-html="article.content"></div>
+    <div class="btns clearfix">
+      <a class="like" @click="likeAction" href="javascript:;"><i class="fa fa-heart-o"></i> {{article.like}}</a>
     </div>
   </div>
 </template>
@@ -13,8 +14,7 @@ import API from '../../../api.config.js'
 export default {
   data () {
     return {
-      title: '',
-      content: ''
+      article: {}
     }
   },
   created () {
@@ -22,13 +22,13 @@ export default {
   },
   methods: {
     getArticle: function () {
-      console.log(this.$route.params.id)
       this.$http.get(API.HOST + 'article/' + this.$route.params.id)
         .then((response) => {
-          console.log(response.data.title)
-          this.title = response.data.title
-          this.content = response.data.content
+          this.article = response.data
         })
+    },
+    likeAction: function () {
+      this.article.like++
     }
   }
 }
@@ -44,5 +44,12 @@ h1{
 .content{
   padding: 20px 0;
 }
+.btns{
+  padding: 40px 0;
+  a.like{
+    float: right; height: 36px; padding: 0 40px; border: #e78170 solid 1px; text-align: center; line-height: 36px; border-radius: 19px; color: #e78170; font-size: 16px;
+  }
+}
+
 
 </style>

@@ -10,6 +10,11 @@ export default [
           component: resolve => require(['../pages/home/'], resolve)
       },
       {
+        path: '/about',
+        name: 'about',
+        component: resolve => require(['../pages/about/'], resolve)
+      },
+      {
           path: '/article/:id',
           name: 'article',
           component: resolve => require(['../pages/article/'], resolve)

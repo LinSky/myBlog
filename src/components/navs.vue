@@ -15,14 +15,9 @@ export default {
           name: 'home'
         },
         {
-          ch: '介绍',
-          en: 'info',
-          name: 'home'
-        },
-        {
-          ch: '写文章',
-          en: 'write',
-          name: 'write'
+          ch: '关于',
+          en: 'about',
+          name: 'about'
         }
       ]
     }

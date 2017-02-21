@@ -3,7 +3,7 @@
     <div class="article_item">
         <p class="date">{{article.author}} 写于 {{format(article.createTime)}}</p>
         <router-link :to="{name: 'article', params: {id: article._id}}"> <h2>{{article.title}}</h2> </router-link>
-        <p class="numbers">阅读 {{article.view}} · 喜欢 {{article.like}} · 评论 {{article.commentNum}}</p>
+        <p class="numbers">阅读 {{article.view}} · 喜欢 {{article.like}}</p>
     </div>
   </div>
 </template>
