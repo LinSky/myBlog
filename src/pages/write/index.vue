@@ -21,6 +21,9 @@ import '../../style/simditor.css'
 export default {
   data () {
     return {
+      form: {
+        name: ''
+      },
       editor: null,
       content: '',
       title: '',
@@ -64,7 +67,7 @@ export default {
 .page{
 }
 .title_con{
-  padding: 40px 0;
+  margin-bottom: 20px;
   input{
     width:100%; height: 48px; padding: 0 10px; font-size: 16px; border: #c9d8db solid 1px; box-sizing: border-box;
   }
@@ -73,6 +76,6 @@ export default {
   display: block; text-align: center; line-height: 48px; margin-top: 40px; background-color: #c9d8db; color: #FFF; font-size: 16px;
 }
 .send_btn{
-  width: 100%; margin: 40px 0;
+  width: 100px; float: right; margin-top: 20px;
 }
 </style>

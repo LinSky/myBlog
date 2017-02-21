@@ -1,13 +1,14 @@
 <template>
 	<el-row class="container">
 		<el-col :span="24" class="header">
-				<span> 管理后台</span>
+				<span>管理后台</span>
 		</el-col>
 		<el-col :span="24" class="main">
 			<aside>
         <el-menu class="el-menu-vertical-demo" theme="dark" default-active="write" v-bind:router="true">
           <el-menu-item index="write"><i class="el-icon-edit"></i>写文章</el-menu-item>
           <el-menu-item index="uploadimg"><i class="el-icon-upload2"></i>上传图片</el-menu-item>
+          <el-menu-item index="uploadimg"><i class="el-icon-setting"></i>文章管理</el-menu-item>
         </el-menu>
       </aside>
 			<section class="content-container">
@@ -41,32 +42,9 @@
 			line-height: 60px;
 			background: #1F2D3D;
 			color: #c0ccda;
-			.userinfo {
-				text-align: right;
-				padding-right: 35px;
-				.userinfo-inner {
-					color: #c0ccda;
-					cursor: pointer;
-					img {
-						width: 40px;
-						height: 40px;
-						border-radius: 20px;
-						margin: 10px 0px 10px 10px;
-						float: right;
-					}
-				}
-			}
-			.logo {
-				font-size: 22px;
-				img {
-					width: 40px;
-					float: left;
-					margin: 10px 10px 10px 18px;
-				}
-				.txt {
-					color: #20a0ff
-				}
-			}
+      span{
+        font-size: 24px; padding: 0 10px; color: #FFF;
+      }
 		}
 		.main {
 			background: #324057;
