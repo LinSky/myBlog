@@ -62,7 +62,6 @@ export default {
 
 <style lang="less" scoped>
 .page{
-  width: 600px; margin: auto;
 }
 .title_con{
   padding: 40px 0;

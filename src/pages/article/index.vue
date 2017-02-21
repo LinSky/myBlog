@@ -47,7 +47,7 @@ h1{
 .btns{
   padding: 40px 0;
   a.like{
-    float: right; height: 36px; padding: 0 40px; border: #e78170 solid 1px; text-align: center; line-height: 36px; border-radius: 19px; color: #e78170; font-size: 16px;
+    float: right; width: 36px; height: 36px; text-align: center; line-height: 36px; font-size: 16px; color: #ccc; cursor: pointer;
   }
 }
 

@@ -22,13 +22,25 @@ export default [
     ]
   },
   {
-    path: '/write',
-    name: 'write',
-    component: resolve => require(['../pages/write/'], resolve)
-  },
-  {
     path: '/login',
     name: 'login',
     component: resolve => require(['../pages/login/'], resolve)
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: resolve => require(['../pages/admin/'], resolve),
+    children: [
+      {
+          path: '/write',
+          name: 'write',
+          component: resolve => require(['../pages/write/'], resolve)
+      },
+      {
+        path: '/uploadimg',
+        name: 'uploadimg',
+        component: resolve => require(['../pages/uploadimg/'], resolve)
+      }
+    ]
   }
 ]
