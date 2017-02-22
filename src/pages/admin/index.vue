@@ -19,16 +19,23 @@
 </template>
 
 <script>
-	export default {
-		data () {
-			return {
-			}
-		},
-		methods: {
-    },
-		mounted () {
+import { mapState } from 'vuex'
+export default {
+	data () {
+		return {
 		}
+	},
+	computed: mapState({ user: state => state.user }),
+	methods: {
+  },
+	created () {
+		if (!this.user.id) {
+      this.$router.push('/login')
+    }
+	},
+	mounted () {
 	}
+}
 </script>
 
 <style scoped lang="less">

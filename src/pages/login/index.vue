@@ -42,7 +42,7 @@ export default {
           .then((response) => {
             if (response.data.code === 0) {
               this.USER_SIGNIN(response.data.user)
-              this.$router.push('/write')
+              this.$router.push('/admin')
             } else {
               this.$message.error(response.data.msg)
             }

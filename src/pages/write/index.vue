@@ -32,9 +32,6 @@ export default {
   },
   computed: mapState({ user: state => state.user }),
   created () {
-    if (!this.user.id) {
-      this.$router.push('/login')
-    }
   },
   mounted () {
     this.initSimdotir()

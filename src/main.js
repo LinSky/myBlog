@@ -26,4 +26,4 @@ const router = new VueRouter({
     routes
 })
 
-new Vue({ router, store }).$mount('#app')
+new Vue({ router, store, data: {eventHub: new Vue()} }).$mount('#app')
