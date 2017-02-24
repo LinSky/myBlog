@@ -3,14 +3,14 @@
     <el-button type="primary" :loading="uploading" @click="selectPic">上传<i class="el-icon-upload el-icon--right"></i></el-button>
     <input type="file" id="fileLoad" @change="onFileChange" multiple style="display: none;">
     <el-table :data="tableData" border style="width: 100%" class="table">
-    <el-table-column label="日期" width="160" prop="date"></el-table-column>
-    <el-table-column label="上传者" width="160" prop="author"></el-table-column>
+    <el-table-column label="日期" width="200" :formatter="format"></el-table-column>
+    <el-table-column label="上传者" width="160" prop="authorName"></el-table-column>
     <el-table-column label="图片地址" inline-template>
       <template>
         <el-popover trigger="hover" placement="top">
-          <div class="img_view"><img :src="row.imgUrl" alt=""></div>
+          <div class="img_view"><img :src="host + row.url" alt=""></div>
           <div slot="reference" class="name-wrapper">
-            <el-tag>{{ row.imgUrl }}</el-tag>
+            <el-tag>{{ row.url }}</el-tag>
           </div>
         </el-popover>
       </template>
@@ -27,35 +27,25 @@
 
 <script>
   import API from './../../../api.config.js'
+  import moment from 'moment'
 	export default {
 		data () {
 			return {
+        host: API.HOST,
         uploading: false,
         imgData: [],
-        tableData: [{
-          date: '2016-05-02',
-          author: '王小虎',
-          imgUrl: 'https://segmentfault.com/img/bVEgcn?w=1366&h=768'
-        }, {
-          date: '2016-05-02',
-          author: '王小虎',
-          imgUrl: 'https://segmentfault.com/img/bVEgcn?w=1366&h=768'
-        }, {
-          date: '2016-05-02',
-          author: '王小虎',
-          imgUrl: 'https://segmentfault.com/img/bVEgcn?w=1366&h=768'
-        }, {
-          date: '2016-05-02',
-          author: '王小虎',
-          imgUrl: 'https://segmentfault.com/img/bVEgcn?w=1366&h=768'
-        }, {
-          date: '2016-05-02',
-          author: '王小虎',
-          imgUrl: 'https://segmentfault.com/img/bVEgcn?w=1366&h=768'
-        }]
+        tableData: []
 			}
 		},
+    created () {
+      this.initTable()
+    },
 		methods: {
+      format (row, column) {
+        console.log(row)
+        return moment(row.createTime).utc(true).format('YYYY-MM-DD HH:mm:ss')
+      },
+
       selectPic () {
         document.getElementById('fileLoad').click()
       },
@@ -66,15 +56,18 @@
         if (!files.length) return
         let data = new window.FormData()
         data.append('image', files[0])
-        console.log()
-        data.append('author', JSON.parse(window.sessionStorage.getItem('user')).username)
-        data.append('userId', JSON.parse(window.sessionStorage.getItem('user')).id)
+        data.append('authorId', JSON.parse(window.sessionStorage.getItem('user')).id)
         this.$http.post(API.HOST + 'image-upload', data)
           .then((response) => {
-            console.log(response.data)
             setTimeout(function () {
               vm.uploading = false
             }, 1000)
+          })
+      },
+      initTable () {
+        this.$http.get(API.HOST + 'images')
+          .then((response) => {
+            this.tableData = response.data.result
           })
       },
       handleEdit (index, row) {
