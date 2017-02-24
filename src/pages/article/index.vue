@@ -24,7 +24,7 @@ export default {
     getArticle: function () {
       this.$http.get(API.HOST + 'article/' + this.$route.params.id)
         .then((response) => {
-          this.article = response.data
+          this.article = response.data.result
         })
     },
     likeAction: function () {

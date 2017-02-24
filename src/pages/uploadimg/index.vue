@@ -66,7 +66,9 @@
         if (!files.length) return
         let data = new window.FormData()
         data.append('image', files[0])
-        data.append('author', window.sessionStorage.getItem('user'))
+        console.log()
+        data.append('author', JSON.parse(window.sessionStorage.getItem('user')).username)
+        data.append('userId', JSON.parse(window.sessionStorage.getItem('user')).id)
         this.$http.post(API.HOST + 'image-upload', data)
           .then((response) => {
             console.log(response.data)
